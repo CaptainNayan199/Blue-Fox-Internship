@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:broker_app/dashboard_painter.dart';
+import 'package:broker_app/drawer_header.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,10 +18,24 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        drawer: Drawer(),
+        key: scaffoldKey,
+        // ignore: sized_box_for_whitespace
+        drawer: Container(
+          width: MediaQuery.of(context).size.width *
+              0.85, // Adjust width as needed
+          child: Drawer(
+            child: Column(
+              children: [
+                DrawerHeaderUI(scaffoldKey: scaffoldKey),
+                // Additional drawer items here
+              ],
+            ),
+          ),
+        ),
         appBar: PreferredSize(
           preferredSize:
               Size.fromHeight(110), // Specify the height of the AppBar
