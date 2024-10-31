@@ -57,6 +57,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/home_icon.png
+    - assets/packers_movers_large.png
+    - assets/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
