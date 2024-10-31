@@ -28,11 +28,13 @@ class _MyAppState extends State<MyApp> {
           width: MediaQuery.of(context).size.width *
               0.85, // Adjust width as needed
           child: Drawer(
-            child: Column(
-              children: [
-                DrawerHeaderUI(scaffoldKey: scaffoldKey),
-                // Additional drawer items here
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  DrawerHeaderUI(scaffoldKey: scaffoldKey),
+                  // Additional drawer items here
+                ],
+              ),
             ),
           ),
         ),
