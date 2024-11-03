@@ -96,7 +96,7 @@ class DrawerHeaderUI extends StatelessWidget {
                           Text(
                             "Post your property",
                             style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600),
+                                fontSize: 15, fontWeight: FontWeight.w400),
                           ),
                           SizedBox(width: 9),
                           Container(
