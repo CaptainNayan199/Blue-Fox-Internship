@@ -226,7 +226,9 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
                   ),
                 ),
                 Icon(
-                  _isExpanded ? Icons.arrow_upward : Icons.arrow_downward,
+                  (_isExpanded
+                      ? Image.asset('assets/down-arrow.png')
+                      : Icons.arrow_downward) as IconData?,
                   color: Colors.black54,
                 ),
               ],
