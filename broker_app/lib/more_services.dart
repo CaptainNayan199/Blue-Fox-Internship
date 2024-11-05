@@ -1,54 +1,13 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('Expandable Info')),
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              DrawerHeader(
-                decoration: BoxDecoration(color: Colors.blue),
-                child: Text('Drawer Header'),
-              ),
-              ExpandableContainer(
-                title: 'My Services',
-                items: [
-                  'My Tenant Relationship Manager',
-                  'My Owner Relationship Manager',
-                ],
-              ),
-              ExpandableContainer(
-                title: 'Residential Plans',
-                items: [
-                  'Basic Plan',
-                  'Premium Plan',
-                ],
-              ),
-              // Add more ExpandableContainer widgets as needed
-            ],
-          ),
-        ),
-        body: Center(child: Text('Main Content Area')),
-      ),
-    );
-  }
-}
 
 class ExpandableContainer extends StatefulWidget {
   final String title;
   final List<String> items;
 
   const ExpandableContainer(
-      {Key? key, required this.title, required this.items})
-      : super(key: key);
+      {super.key, required this.title, required this.items});
 
   @override
   _ExpandableContainerState createState() => _ExpandableContainerState();
@@ -64,7 +23,7 @@ class _ExpandableContainerState extends State<ExpandableContainer>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: Duration(milliseconds: 200),
+      duration: Duration(milliseconds: 300),
       vsync: this,
     );
     _arrowAnimation = Tween<double>(begin: 0, end: 0.5).animate(_controller);
@@ -88,6 +47,8 @@ class _ExpandableContainerState extends State<ExpandableContainer>
     return Column(
       children: [
         ListTile(
+          tileColor: Colors.grey[200],
+          textColor: Colors.black,
           title: Text(widget.title),
           trailing: RotationTransition(
             turns: _arrowAnimation,
@@ -97,15 +58,21 @@ class _ExpandableContainerState extends State<ExpandableContainer>
         ),
         if (_isExpanded)
           Container(
-            color: Colors.grey[200],
             padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: Column(
-              children: widget.items
-                  .map((item) => Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(item),
-                      ))
-                  .toList(),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: widget.items
+                    .map((item) => Padding(
+                          padding: const EdgeInsets.only(
+                              bottom: 8.0), // Add bottom spacing here
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(item),
+                          ),
+                        ))
+                    .toList(),
+              ),
             ),
           ),
         Divider(),

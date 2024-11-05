@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, , prefer_const_literals_to_create_immutables, prefer_const_literals_to_create_immutables
 
+import 'package:broker_app/more_services.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,13 +16,13 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
   // Step 1: Declare variables to manage state
   bool _isExpanded = false; // Tracks if icons are shown
   String _buttonText =
-      "Show more"; // Button text to toggle between "Show more" and "Hide"
+      "+ 4 more Services"; // Button text to toggle between "Show more" and "Hide"
 
   // Method to toggle the expanded state
   void _toggleExpand() {
     setState(() {
       _isExpanded = !_isExpanded;
-      _buttonText = _isExpanded ? "Hide" : "Show more";
+      _buttonText = _isExpanded ? "Hide" : "+ 4 more Services";
     });
   }
 
@@ -31,7 +32,7 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
       children: [
         AnimatedContainer(
           duration: Duration(milliseconds: 800),
-          height: _isExpanded ? 180.0 : 0.0, // Height changes with expansion
+          height: _isExpanded ? 130.0 : 0.0, // Height changes with expansion
           curve: Curves.easeInOut, // Smooth animation curve
           child: _isExpanded
               ? Padding(
@@ -226,14 +227,39 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
                   ),
                 ),
                 Icon(
-                  (_isExpanded
-                      ? Image.asset('assets/down-arrow.png')
-                      : Icons.arrow_downward) as IconData?,
-                  color: Colors.black54,
+                  _isExpanded ? Icons.arrow_downward : Icons.arrow_upward,
                 ),
               ],
             ),
           ),
+        ),
+        ExpandableContainer(
+          title: 'My Services',
+          items: [
+            'My Tenant Relationship Manager',
+            'My Owner Relationship Manager',
+          ],
+        ),
+        ExpandableContainer(
+          title: 'My Services',
+          items: [
+            'My Tenant Relationship Manager',
+            'My Owner Relationship Manager',
+          ],
+        ),
+        ExpandableContainer(
+          title: 'My Services',
+          items: [
+            'My Tenant Relationship Manager',
+            'My Owner Relationship Manager',
+          ],
+        ),
+        ExpandableContainer(
+          title: 'My Services',
+          items: [
+            'My Tenant Relationship Manager',
+            'My Owner Relationship Manager',
+          ],
         ),
       ],
     );
