@@ -16,13 +16,13 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
   // Step 1: Declare variables to manage state
   bool _isExpanded = false; // Tracks if icons are shown
   String _buttonText =
-      "+ 4 more Services"; // Button text to toggle between "Show more" and "Hide"
+      "+4 more Services"; // Button text to toggle between "Show more" and "Hide"
 
   // Method to toggle the expanded state
   void _toggleExpand() {
     setState(() {
       _isExpanded = !_isExpanded;
-      _buttonText = _isExpanded ? "Hide" : "+ 4 more Services";
+      _buttonText = _isExpanded ? "View Less" : "+4 more Services";
     });
   }
 
@@ -206,30 +206,34 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
         // Step 2: Add the expandable button
         GestureDetector(
           onTap: _toggleExpand, // Call the toggle method on tap
-          child: Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(14.0),
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20.0),
-                bottomRight: Radius.circular(20.0),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(14.0),
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0),
+                ),
               ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  _buttonText,
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.w600,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    _buttonText,
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                ),
-                Icon(
-                  _isExpanded ? Icons.arrow_downward : Icons.arrow_upward,
-                ),
-              ],
+                  Icon(
+                    _isExpanded ? Icons.arrow_downward : Icons.arrow_upward,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -241,21 +245,21 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
           ],
         ),
         ExpandableContainer(
-          title: 'My Services',
+          title: 'NBcash Wallet',
           items: [
             'My Tenant Relationship Manager',
             'My Owner Relationship Manager',
           ],
         ),
         ExpandableContainer(
-          title: 'My Services',
+          title: 'Resdientail Plans',
           items: [
             'My Tenant Relationship Manager',
             'My Owner Relationship Manager',
           ],
         ),
         ExpandableContainer(
-          title: 'My Services',
+          title: 'Commercial Plans',
           items: [
             'My Tenant Relationship Manager',
             'My Owner Relationship Manager',

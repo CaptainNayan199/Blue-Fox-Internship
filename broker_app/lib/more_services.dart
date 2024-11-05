@@ -49,7 +49,10 @@ class _ExpandableContainerState extends State<ExpandableContainer>
         ListTile(
           tileColor: Colors.grey[200],
           textColor: Colors.black,
-          title: Text(widget.title),
+          title: Text(
+            widget.title,
+            style: TextStyle(fontWeight: FontWeight.w600),
+          ),
           trailing: RotationTransition(
             turns: _arrowAnimation,
             child: Icon(Icons.keyboard_arrow_down),
@@ -58,17 +61,20 @@ class _ExpandableContainerState extends State<ExpandableContainer>
         ),
         if (_isExpanded)
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(2.0),
               child: Column(
                 children: widget.items
                     .map((item) => Padding(
                           padding: const EdgeInsets.only(
-                              bottom: 8.0), // Add bottom spacing here
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(item),
+                              bottom: 0.0), // Add bottom spacing here
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(item),
+                            ),
                           ),
                         ))
                     .toList(),
