@@ -71,7 +71,7 @@ class _ExpandableContainerState extends State<ExpandableContainer>
                               bottom: 0.0), // Add bottom spacing here
                           child: Row(
                             children: [
-                              Icon(Icons.add),
+                              Icon(Icons.person_2),
                               Padding(
                                 padding: const EdgeInsets.all(12.0),
                                 child: Align(
