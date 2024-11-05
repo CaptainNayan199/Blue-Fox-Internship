@@ -51,7 +51,7 @@ class _ExpandableContainerState extends State<ExpandableContainer>
           textColor: Colors.black,
           title: Text(
             widget.title,
-            style: TextStyle(fontWeight: FontWeight.w600),
+            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 14),
           ),
           trailing: RotationTransition(
             turns: _arrowAnimation,
@@ -69,19 +69,27 @@ class _ExpandableContainerState extends State<ExpandableContainer>
                     .map((item) => Padding(
                           padding: const EdgeInsets.only(
                               bottom: 0.0), // Add bottom spacing here
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(item),
-                            ),
+                          child: Row(
+                            children: [
+                              Icon(Icons.add),
+                              Padding(
+                                padding: const EdgeInsets.all(12.0),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(item),
+                                ),
+                              ),
+                            ],
                           ),
                         ))
                     .toList(),
               ),
             ),
           ),
-        Divider(),
+        // Divider(),
+        SizedBox(
+          height: 8,
+        ),
       ],
     );
   }
