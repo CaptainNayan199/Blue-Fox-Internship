@@ -1,13 +1,14 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 
 class ExpandableContainer extends StatefulWidget {
   final String title;
-  final List<String> items;
+  final List<Map<String, dynamic>> items; // Updated type to include maps
 
-  const ExpandableContainer(
-      {super.key, required this.title, required this.items});
+  const ExpandableContainer({
+    super.key,
+    required this.title,
+    required this.items,
+  });
 
   @override
   _ExpandableContainerState createState() => _ExpandableContainerState();
@@ -65,31 +66,32 @@ class _ExpandableContainerState extends State<ExpandableContainer>
             child: Padding(
               padding: const EdgeInsets.all(2.0),
               child: Column(
-                children: widget.items
-                    .map((item) => Padding(
-                          padding: const EdgeInsets.only(
-                              bottom: 0.0), // Add bottom spacing here
-                          child: Row(
-                            children: [
-                              Icon(Icons.person_2),
-                              Padding(
-                                padding: const EdgeInsets.all(12.0),
-                                child: Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(item),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ))
-                    .toList(),
+                children: widget.items.map((item) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 0.0),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: [
+                            Icon(item['icon'], size: 20), // Custom icon
+                            SizedBox(width: 8), // Spacing between icon and text
+                            Expanded(
+                              child: Text(item['text']),
+                            ),
+                            if (item['trailing'] != null)
+                              item['trailing'], // Optional trailing widget
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
               ),
             ),
           ),
-        // Divider(),
-        SizedBox(
-          height: 8,
-        ),
+        SizedBox(height: 8),
       ],
     );
   }
