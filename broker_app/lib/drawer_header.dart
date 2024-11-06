@@ -325,8 +325,7 @@ class DrawerHeaderUI extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundColor:
-                        Color.fromARGB(255, 190, 188, 188), // Milkish color
+                    backgroundColor: Color(0xFFF7FCFF), // Milkish color
                     child: Image.asset(
                       'assets/paint_bucket.png', // Path to your image
                       width: 31, // Set the desired width
@@ -353,7 +352,7 @@ class DrawerHeaderUI extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 30,
-                          backgroundColor: Color.fromARGB(255, 190, 188, 188),
+                          backgroundColor: Color(0xFFF7FCFF),
                           child: Image.asset(
                             'assets/courrier_truck.png', // Path to your image
                             width: 33, // Set the desired width
@@ -396,7 +395,7 @@ class DrawerHeaderUI extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 30,
-                          backgroundColor: Color.fromARGB(255, 190, 188, 188),
+                          backgroundColor: Color(0xFFF7FCFF),
                           child: Image.asset(
                             'assets/home_cleaning.png', // Path to your image
                             width: 33, // Set the desired width
@@ -439,7 +438,7 @@ class DrawerHeaderUI extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 30,
-                          backgroundColor: Color.fromARGB(255, 190, 188, 188),
+                          backgroundColor: Color(0xFFF7FCFF),
                           child: Image.asset(
                             'assets/ac.png', // Path to your image
                             width: 38, // Set the desired width
