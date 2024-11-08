@@ -1,5 +1,6 @@
-// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: library_private_types_in_public_api, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
+import 'package:broker_app/PropSearch_HomeServices/container_extends.dart';
 import 'package:broker_app/dashboard_painter.dart';
 import 'package:broker_app/drawer_header.dart';
 import 'package:flutter/material.dart';
@@ -260,7 +261,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
         ),
-        body: const Center(),
+        body: PropertyHome(),
       ),
     );
   }

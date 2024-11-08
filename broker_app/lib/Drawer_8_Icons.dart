@@ -241,20 +241,10 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
             {
               'text': 'My Tenant Relationship Manager',
               'icon': Icons.person,
-              'trailing': Container(
-                padding: EdgeInsets.all(4),
-                color: Colors.blue,
-                child: Text('Info', style: TextStyle(color: Colors.white)),
-              ),
             },
             {
               'text': 'My Owner Relationship Manager',
               'icon': Icons.home,
-              'trailing': Container(
-                padding: EdgeInsets.all(4),
-                color: Colors.red,
-                child: Text('New', style: TextStyle(color: Colors.white)),
-              ),
             },
             // Add more items with different icons and trailing widgets
           ],
