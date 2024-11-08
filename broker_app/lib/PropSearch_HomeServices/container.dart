@@ -133,3 +133,92 @@ class HomeServicesContent extends StatelessWidget {
     return Center(child: Text("Home Services Content"));
   }
 }
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 1; // Default selected tab is the middle one (Rent)
+
+  // Pages corresponding to each tab
+  final List<Widget> _pages = [
+    Center(child: Text('Buy Page')),
+    Center(child: Text('Rent Page')),
+    Center(child: Text('Commercial Page')),
+  ];
+
+  void _onTabSelected(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // Tabs Row
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildTab('Buy', 0),
+            _buildTab('Rent', 1),
+            _buildTab('Commercial', 2),
+          ],
+        ),
+        // Page view (based on selected tab)
+        Expanded(
+          child: _pages[_selectedIndex],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildTab(String title, int index) {
+    bool isSelected = _selectedIndex == index;
+    return Expanded(
+      child: GestureDetector(
+        onTap: () => _onTabSelected(index),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 10),
+          decoration: BoxDecoration(
+            border: isSelected
+                ? Border(
+                    bottom: BorderSide(color: Colors.red, width: 2),
+                  )
+                : null,
+          ),
+          child: Center(
+            child: Text(
+              title,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                color: isSelected ? Colors.red : Colors.black,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
