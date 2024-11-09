@@ -93,6 +93,7 @@ class _PropertyHomeState extends State<PropertyHome> {
                         _selectedTabIndex =
                             1; // Set tab index for "Home Services"
                       });
+                      _showCustomBottomSheet(context);
                     },
                     child: _selectedTabIndex == 1
                         ? Container(
@@ -160,4 +161,34 @@ class _PropertyHomeState extends State<PropertyHome> {
       ],
     );
   }
+}
+
+// Method to show custom bottom sheet
+void _showCustomBottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Home Services',
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
+            SizedBox(height: 10),
+            Text('Service 1: Example service description...'),
+            SizedBox(height: 10),
+            Text('Service 2: Example service description...'),
+            // Add more content here
+          ],
+        ),
+      );
+    },
+  );
 }
