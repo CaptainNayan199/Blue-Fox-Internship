@@ -167,28 +167,110 @@ class _PropertyHomeState extends State<PropertyHome> {
 void _showCustomBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
+    isScrollControlled: true, // Allows customization of the height
     builder: (BuildContext context) {
       return Container(
         padding: EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.0), // Customizable border radius
+            topRight: Radius.circular(20.0), // Customizable border radius
+          ),
+        ),
+        height: 520, // Set a customizable height here (adjust as needed)
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Home Services',
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
+            Padding(
+              padding:
+                  const EdgeInsets.only(right: 16.0), // Padding to the right
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Select your city',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
             ),
-            SizedBox(height: 10),
-            Text('Service 1: Example service description...'),
-            SizedBox(height: 10),
-            Text('Service 2: Example service description...'),
-            // Add more content here
+            SizedBox(
+                height: 40), // Space between "Select your city" and the column
+
+            // Column for rows
+            Expanded(
+              child: Column(
+                children: [
+                  // Row 1
+                  _buildRow(),
+                  SizedBox(height: 20), // Gap between rows
+                  // Row 2
+                  _buildRow(),
+                  SizedBox(height: 20), // Gap between rows
+                  // Row 3
+                  _buildRow(),
+                  SizedBox(height: 20), // Gap between rows
+                  // Row 4
+                  _buildRow(),
+                ],
+              ),
+            ),
           ],
         ),
       );
     },
+  );
+}
+
+Widget _buildRow() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children: [
+      _buildExpandedItem('assets/icon1.png', 'Label 1'),
+      _buildExpandedItem('assets/icon2.png', 'Label 2'),
+      _buildExpandedItem('assets/icon3.png', 'Label 3'),
+    ],
+  );
+}
+
+Widget _buildExpandedItem(String imagePath, String labelText) {
+  return Expanded(
+    child: GestureDetector(
+      onTap: () {
+        // Action for when the item is clicked
+        print('$labelText clicked');
+      },
+      child: Column(
+        children: [
+          Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.blueGrey[100], // Circular background color
+            ),
+            child: Center(
+              child: Image.asset(
+                imagePath,
+                width: 40,
+                height: 40,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          SizedBox(height: 8),
+          Text(
+            labelText,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
+    ),
   );
 }
