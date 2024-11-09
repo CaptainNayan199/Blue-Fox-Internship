@@ -232,8 +232,8 @@ Widget _buildRow1() {
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
       _buildExpandedItem('assets/bangalore.jpg', 'Bangalore'),
-      _buildExpandedItem('assets/icon2.png', 'Mumbai'),
-      _buildExpandedItem('assets/icon3.png', 'Chennai'),
+      _buildExpandedItem('assets/mumbai.jpg', 'Mumbai'),
+      _buildExpandedItem('assets/chennai.jpg', 'Chennai'),
     ],
   );
 }
@@ -242,9 +242,9 @@ Widget _buildRow2() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      _buildExpandedItem('assets/icon1.png', 'Pune'),
-      _buildExpandedItem('assets/icon2.png', 'Hyderabad'),
-      _buildExpandedItem('assets/icon3.png', 'Gurgaon'),
+      _buildExpandedItem('assets/pune.jpg', 'Pune'),
+      _buildExpandedItem('assets/hyderabad.jpg', 'Hyderabad'),
+      _buildExpandedItem('assets/gurgaon.jpg', 'Gurgaon'),
     ],
   );
 }
@@ -253,9 +253,9 @@ Widget _buildRow3() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      _buildExpandedItem('assets/icon1.png', 'Delhi'),
-      _buildExpandedItem('assets/icon2.png', 'Noida'),
-      _buildExpandedItem('assets/icon3.png', 'Greater Noida'),
+      _buildExpandedItem('assets/delhi.jpg', 'Delhi'),
+      _buildExpandedItem('assets/noida.jpg', 'Noida'),
+      _buildExpandedItem('assets/gnoida.jpg', 'Greater Noida'),
     ],
   );
 }
@@ -264,9 +264,9 @@ Widget _buildRow4() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      _buildExpandedItem('assets/icon1.png', 'Ghaziabad'),
-      _buildExpandedItem('assets/icon2.png', 'Faridabad'),
-      _buildExpandedItem('assets/icon3.png', 'Ahemdabad'),
+      _buildExpandedItem('assets/ghaziabad.jpg', 'Ghaziabad'),
+      _buildExpandedItem('assets/faridabad.jpg', 'Faridabad'),
+      _buildExpandedItem('assets/ahemedabad.png', 'Ahemdabad'),
     ],
   );
 }
