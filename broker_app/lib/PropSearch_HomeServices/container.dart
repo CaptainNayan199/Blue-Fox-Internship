@@ -136,10 +136,10 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                                 ),
                                 RichText(
                                   text: TextSpan(
-                                    text: "Tenants / Buyers ",
+                                    text: "Tenants / Buyers ?",
                                     style: TextStyle(
                                       fontSize: 16,
-                                      color: Colors.black87,
+                                      color: Colors.black54,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -155,7 +155,7 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                                 Text(
                                   "Faster & Verified Tenants/Buyers",
                                   style: TextStyle(
-                                      fontSize: 14, color: Colors.black54),
+                                      fontSize: 13, color: Colors.black54),
                                 ),
                               ],
                             ),
@@ -168,7 +168,7 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                                 Text(
                                   "Pay ZERO brokerage",
                                   style: TextStyle(
-                                      fontSize: 14, color: Colors.black54),
+                                      fontSize: 13, color: Colors.black54),
                                 ),
                               ],
                             ),
