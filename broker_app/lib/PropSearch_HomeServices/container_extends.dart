@@ -179,7 +179,7 @@ void _showCustomBottomSheet(BuildContext context) {
             topRight: Radius.circular(16.0), // Customizable border radius
           ),
         ),
-        height: 550, // Set a customizable height here (adjust as needed)
+        height: 490, // Set a customizable height here (adjust as needed)
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -285,13 +285,13 @@ Widget _buildExpandedItem(String imagePath, String labelText) {
           ClipOval(
             child: Image.asset(
               imagePath,
-              width: 60, // Adjust this to the desired size
-              height: 60, // Adjust this to the desired size
+              width: 50, // Adjust this to the desired size
+              height: 50, // Adjust this to the desired size
               fit: BoxFit
                   .cover, // Ensures the image covers the entire circular area
             ),
           ),
-          SizedBox(height: 8),
+          SizedBox(height: 6),
           Text(
             labelText,
             textAlign: TextAlign.center,

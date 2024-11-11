@@ -107,7 +107,95 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                     ),
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: 10),
+              Center(
+                child: Container(
+                  padding: EdgeInsets.all(15.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFE0F2FE), // Light blue background
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Row(
+                    children: [
+                      // Left Column with Text
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Looking for Tenants / Buyers?",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 8),
+                            Row(
+                              children: [
+                                Icon(Icons.check,
+                                    color: Colors.black54, size: 16),
+                                SizedBox(width: 4),
+                                Text(
+                                  "Faster & Verified Tenants/Buyers",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black54),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 4),
+                            Row(
+                              children: [
+                                Icon(Icons.check,
+                                    color: Colors.black54, size: 16),
+                                SizedBox(width: 4),
+                                Text(
+                                  "Pay ZERO brokerage",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.black54),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 16),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.redAccent,
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 12,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                              ),
+                              child: Text(
+                                "Post FREE Property Ad",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      // Right Column with Image
+                      SizedBox(width: 16),
+                      SizedBox(
+                        height: 30,
+                        width: 30,
+                        child: Image.network(
+                          'https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg', // Replace with your image asset
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
