@@ -124,18 +124,33 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Looking for Tenants / Buyers?",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            Row(
+                              children: [
+                                RichText(
+                                  textAlign: TextAlign.left,
+                                  text: TextSpan(
+                                    text: "Looking for ",
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.black54),
+                                  ),
+                                ),
+                                RichText(
+                                  text: TextSpan(
+                                    text: "Tenants / Buyers ",
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                             SizedBox(height: 8),
                             Row(
                               children: [
                                 Icon(Icons.check,
-                                    color: Colors.black54, size: 16),
+                                    color: Colors.black87, size: 16),
                                 SizedBox(width: 4),
                                 Text(
                                   "Faster & Verified Tenants/Buyers",
@@ -148,7 +163,7 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                             Row(
                               children: [
                                 Icon(Icons.check,
-                                    color: Colors.black54, size: 16),
+                                    color: Colors.black87, size: 16),
                                 SizedBox(width: 4),
                                 Text(
                                   "Pay ZERO brokerage",
@@ -185,11 +200,12 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                       // Right Column with Image
                       SizedBox(width: 16),
                       SizedBox(
-                        height: 30,
-                        width: 30,
-                        child: Image.network(
-                          'https://gratisography.com/wp-content/uploads/2024/03/gratisography-funflower-800x525.jpg', // Replace with your image asset
+                        height: 50,
+                        width: 50,
+                        child: Image.asset(
+                          'assets/home.jpg', // Replace with your image asset
                           fit: BoxFit.contain,
+                          scale: 20,
                         ),
                       ),
                     ],
