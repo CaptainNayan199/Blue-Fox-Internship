@@ -593,66 +593,6 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
             },
           ],
         ),
-
-        // ExpandableContainer(
-        //   title: 'NBcash Wallet',
-        //   items: [
-        //     'Wallet Summary',
-        //     'Rewards',
-        //   ],
-        // ),
-        // ExpandableContainer(
-        //   title: 'Resdientail Plans',
-        //   items: ['For Owners', 'For Sellers', 'For Tenants', 'For Buyers'],
-        // ),
-        // ExpandableContainer(
-        //   title: 'Commercial Plans',
-        //   items: ['For Owners', 'For Sellers', 'For Tenants', 'For Buyers'],
-        // ),
-        // ExpandableContainer(
-        //   title: 'Home Services',
-        //   items: [
-        //     'Packers & Movers',
-        //     'Painting',
-        //     'Cleaning',
-        //     'Interiors',
-        //     'Furniture'
-        //   ],
-        // ),
-        // ExpandableContainer(
-        //   title: 'NoBroker Pay',
-        //   items: [
-        //     'Pay Your Rent',
-        //     'Deposit Payment',
-        //     'Maintenance Payments',
-        //     'Bill Payments'
-        //   ],
-        // ),
-        // ExpandableContainer(
-        //   title: 'Legal Assitance & Loan',
-        //   items: [
-        //     'Rental Agreement',
-        //     'Police Intimation',
-        //     'Tenant Verification',
-        //     'Property Legal Assistance',
-        //     'Home Loan',
-        //     'Home Deposit Loan'
-        //   ],
-        // ),
-        // ExpandableContainer(
-        //   title: 'Utilities',
-        //   items: ['Know Your Rent', 'Create Rent Receipts', 'Click & Earn'],
-        // ),
-        // ExpandableContainer(
-        //   title: 'Help & Support',
-        //   items: [
-        //     'Support Topics',
-        //     'Blog',
-        //     'Feedback',
-        //     'About Us',
-        //     'Chat With Us'
-        //   ],
-        // ),
       ],
     );
   }
