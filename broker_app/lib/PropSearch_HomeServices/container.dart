@@ -199,13 +199,16 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
 
                       // Right Column with Image
                       SizedBox(width: 16),
-                      SizedBox(
-                        height: 102,
-                        width: 102,
-                        child: Image.asset(
-                          'assets/house.png', // Replace with your image asset
-                          fit: BoxFit.contain,
-                          scale: 90,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 28.0),
+                        child: SizedBox(
+                          height: 102,
+                          width: 102,
+                          child: Image.asset(
+                            'assets/house.png', // Replace with your image asset
+                            fit: BoxFit.contain,
+                            scale: 90,
+                          ),
                         ),
                       ),
                     ],
