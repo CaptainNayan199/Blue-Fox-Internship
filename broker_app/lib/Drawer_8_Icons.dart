@@ -315,7 +315,6 @@ class _YourDrawerPageState extends State<YourDrawerPage> {
             },
           ],
         ),
-
         ExpandableContainer(
           title: 'Commercial Plans',
           items: [
