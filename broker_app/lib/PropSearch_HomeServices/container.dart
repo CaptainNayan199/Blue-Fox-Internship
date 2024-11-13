@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:broker_app/PropSearch_HomeServices/test.dart';
 import 'package:flutter/material.dart';
 
 class PropertySearchContent extends StatefulWidget {
@@ -14,9 +15,15 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
   int _selectedIndex = 1; // Default to middle tab (Rent)
 
   final List<Widget> _pages = [
-    Center(child: Text('Buy Page')),
-    Center(child: Text('Rent Page')),
-    Center(child: Text('Commercial Page')),
+    Center(
+      child: Text('Buy Page'),
+    ),
+    Center(
+      child: ServicesForYou(),
+    ),
+    Center(
+      child: ServicesForYou(),
+    ),
   ];
 
   @override
@@ -24,198 +31,202 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
     return Column(
       children: [
         SizedBox(height: 30),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: "100% Owner Properties |",
-                    style: TextStyle(color: Colors.black54, fontSize: 18),
-                  )
-                ],
+        SingleChildScrollView(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "100% Owner Properties |",
+                      style: TextStyle(color: Colors.black54, fontSize: 18),
+                    )
+                  ],
+                ),
               ),
-            ),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: " Zero Brokerage",
-                    style: TextStyle(color: Colors.black, fontSize: 18),
-                  )
-                ],
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: " Zero Brokerage",
+                      style: TextStyle(color: Colors.black, fontSize: 18),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         SizedBox(height: 15), // Space between the text and tabs
 
         // Row for the 3 tabs
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _buildTab('Buy', 0),
-                  _buildTab('Rent', 1),
-                  _buildTab('Commercial', 2),
-                ],
-              ),
-              SizedBox(height: 20), // Space between the tabs and the search bar
-
-              // This is the search bar directly below the tabs
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 3.0),
-                child: TextField(
-                  // controller: controller,
-                  decoration: InputDecoration(
-                    // Placeholder centered
-                    hintText: 'Search up to 3 Localities or Landmarks',
-                    hintStyle: TextStyle(color: Colors.black54, fontSize: 13),
-
-                    // Border configuration
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black54),
-                      borderRadius:
-                          BorderRadius.circular(4.0), // Rounded corners
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black54),
-                      borderRadius: BorderRadius.circular(4.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black54),
-                      borderRadius: BorderRadius.circular(4.0),
-                    ),
-
-                    // Trailing search icon inside red container
-                    suffixIcon: Container(
-                      margin: EdgeInsets.all(5.0),
-                      decoration: BoxDecoration(
-                        color: Colors.red,
+        SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    _buildTab('Buy', 0),
+                    _buildTab('Rent', 1),
+                    _buildTab('Commercial', 2),
+                  ],
+                ),
+                SizedBox(height: 20), // Space between the tabs and the search bar
+          
+                // This is the search bar directly below the tabs
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 3.0),
+                  child: TextField(
+                    // controller: controller,
+                    decoration: InputDecoration(
+                      // Placeholder centered
+                      hintText: 'Search up to 3 Localities or Landmarks',
+                      hintStyle: TextStyle(color: Colors.black54, fontSize: 13),
+          
+                      // Border configuration
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black54),
+                        borderRadius:
+                            BorderRadius.circular(4.0), // Rounded corners
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black54),
                         borderRadius: BorderRadius.circular(4.0),
                       ),
-                      child: IconButton(
-                        onPressed: () {
-                          // You can add your search action here
-                        },
-                        icon: Icon(Icons.search, color: Colors.white),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black54),
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+          
+                      // Trailing search icon inside red container
+                      suffixIcon: Container(
+                        margin: EdgeInsets.all(5.0),
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(4.0),
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            // You can add your search action here
+                          },
+                          icon: Icon(Icons.search, color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-              Center(
-                child: Container(
-                  padding: EdgeInsets.all(15.0),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFE0F2FE), // Light blue background
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Row(
-                    children: [
-                      // Left Column with Text
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                RichText(
-                                  textAlign: TextAlign.left,
-                                  text: TextSpan(
-                                    text: "Looking for ",
-                                    style: TextStyle(
-                                        fontSize: 16, color: Colors.black54),
-                                  ),
-                                ),
-                                RichText(
-                                  text: TextSpan(
-                                    text: "Tenants / Buyers ?",
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.black54,
-                                      fontWeight: FontWeight.bold,
+                SizedBox(height: 10),
+                Center(
+                  child: Container(
+                    padding: EdgeInsets.all(15.0),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFE0F2FE), // Light blue background
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    child: Row(
+                      children: [
+                        // Left Column with Text
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  RichText(
+                                    textAlign: TextAlign.left,
+                                    text: TextSpan(
+                                      text: "Looking for ",
+                                      style: TextStyle(
+                                          fontSize: 16, color: Colors.black54),
                                     ),
                                   ),
+                                  RichText(
+                                    text: TextSpan(
+                                      text: "Tenants / Buyers ?",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.black54,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 8),
+                              Row(
+                                children: [
+                                  Icon(Icons.check,
+                                      color: Colors.black87, size: 16),
+                                  SizedBox(width: 4),
+                                  Text(
+                                    "Faster & Verified Tenants/Buyers",
+                                    style: TextStyle(
+                                        fontSize: 13, color: Colors.black54),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 4),
+                              Row(
+                                children: [
+                                  Icon(Icons.check,
+                                      color: Colors.black87, size: 16),
+                                  SizedBox(width: 4),
+                                  Text(
+                                    "Pay ZERO brokerage",
+                                    style: TextStyle(
+                                        fontSize: 13, color: Colors.black54),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 16),
+                              ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.redAccent,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 24,
+                                    vertical: 12,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 8),
-                            Row(
-                              children: [
-                                Icon(Icons.check,
-                                    color: Colors.black87, size: 16),
-                                SizedBox(width: 4),
-                                Text(
-                                  "Faster & Verified Tenants/Buyers",
+                                child: Text(
+                                  "Post FREE Property Ad",
                                   style: TextStyle(
-                                      fontSize: 13, color: Colors.black54),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 4),
-                            Row(
-                              children: [
-                                Icon(Icons.check,
-                                    color: Colors.black87, size: 16),
-                                SizedBox(width: 4),
-                                Text(
-                                  "Pay ZERO brokerage",
-                                  style: TextStyle(
-                                      fontSize: 13, color: Colors.black54),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 16),
-                            ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.redAccent,
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 24,
-                                  vertical: 12,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                              child: Text(
-                                "Post FREE Property Ad",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      // Right Column with Image
-                      SizedBox(width: 16),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 28.0),
-                        child: SizedBox(
-                          height: 102,
-                          width: 102,
-                          child: Image.asset(
-                            'assets/house.png', // Replace with your image asset
-                            fit: BoxFit.contain,
-                            scale: 90,
+                            ],
                           ),
                         ),
-                      ),
-                    ],
+          
+                        // Right Column with Image
+                        SizedBox(width: 16),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 28.0),
+                          child: SizedBox(
+                            height: 102,
+                            width: 102,
+                            child: Image.asset(
+                              'assets/house.png', // Replace with your image asset
+                              fit: BoxFit.contain,
+                              scale: 90,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
 
