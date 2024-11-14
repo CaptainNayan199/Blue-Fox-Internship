@@ -74,8 +74,9 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                     _buildTab('Commercial', 2),
                   ],
                 ),
-                SizedBox(height: 20), // Space between the tabs and the search bar
-          
+                SizedBox(
+                    height: 20), // Space between the tabs and the search bar
+
                 // This is the search bar directly below the tabs
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 3.0),
@@ -85,7 +86,7 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                       // Placeholder centered
                       hintText: 'Search up to 3 Localities or Landmarks',
                       hintStyle: TextStyle(color: Colors.black54, fontSize: 13),
-          
+
                       // Border configuration
                       border: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black54),
@@ -100,7 +101,7 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                         borderSide: BorderSide(color: Colors.black54),
                         borderRadius: BorderRadius.circular(4.0),
                       ),
-          
+
                       // Trailing search icon inside red container
                       suffixIcon: Container(
                         margin: EdgeInsets.all(5.0),
@@ -206,7 +207,7 @@ class _PropertySearchContentState extends State<PropertySearchContent> {
                             ],
                           ),
                         ),
-          
+
                         // Right Column with Image
                         SizedBox(width: 16),
                         Padding(
